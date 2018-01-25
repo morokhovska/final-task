@@ -1,22 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Main Page</title>
 </head>
-<body>
-  <header>
 
+<body>
+  <header class="header-container">
+    <div class="header-content">
+      <div class="header-top">
+        <div class="template">
+          <a href="start.html" class="logo">Template</a>
+          <a href="start.html" class="logoMobile">TL</a>
+        </div>
+        <div class="header-top-right">
+          <div class="email">
+            <a href="#" class="emailSingUp hideMobile">E-mail sing up</a>
+          </div>
+          <div class="bag">
+            <a href="shopping-bag.html" class="bagLink">Bag
+              <span class="totalPrice"></span>
+            </a>
+          </div>
+          <div class="menuMobile">
+            <a href="#" class="menuIcon"></a>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <nav class="headerNav">
+          <ul>
+            <li>
+              <a href="catalog.html">Women</a>
+            </li>
+            <li>
+              <a href="#">Men</a>
+            </li>
+            <li>
+              <a href="#">Handbags</a>
+            </li>
+            <li>
+              <a href="#">Accessories</a>
+            </li>
+            <li>
+              <a href="#">Sale</a>
+            </li>
+            <li>
+              <a href="#">New Arrivals</a>
+            </li>
+            <li>
+              <a href="#">Clearance</a>
+            </li>
+            <li>
+              <a href="#">Store Locator</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="search">
+          <form action="" class="searchForm">
+            <input type="search" name="search" placeholder="Style Name">
+          </form>
+          <button type="button" class="searchButton">
+            <img src="img/header/search.png" alt="search">
+          </button>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
+<section class="slideshow">
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="img/slider/slider1.jpg">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="img/slider/slider1.jpg">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="img/slider/slider1.jpg">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </section>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
 
   </main>
-  
+
   <footer>
 
   </footer>
 </body>
+
 </html>
